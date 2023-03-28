@@ -1,0 +1,40 @@
+{
+  "name": "wc-preact",
+	"type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist-rollup/counter-ru.bundled.js",
+  "types": "./build/counter.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rimraf dist-rollup dist-webpack build",
+		"checksize-rollup": "rollup -c ; cat dist-rollup/counter-ru.bundled.js | gzip -9 | wc -c ; rimraf dist-rollup",
+		"bundle-rollup": "rollup -c",
+		"checksize-webpack": "webpack ; cat dist-webpack/counter-wp.bundled.js | gzip -9 | wc -c ; rimraf dist-webpack",
+		"bundle-webpack": "webpack"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "preact": "10.13.1",
+    "preact-custom-element": "4.2.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "15.0.1",
+    "@rollup/plugin-replace": "5.0.2",
+    "@rollup/plugin-terser": "0.4.0",
+    "@types/preact-custom-element": "4.0.1",
+    "cross-env": "7.0.3",
+    "preact-cli": "3.4.5",
+    "preact-render-to-string": "5.2.6",
+    "rimraf": "4.4.0",
+    "rollup": "3.19.1",
+    "rollup-plugin-summary": "2.0.0",
+    "terser-webpack-plugin": "5.3.7",
+    "ts-loader": "9.4.2",
+    "typescript": "^4.5.2",
+    "webpack": "5.76.2",
+    "webpack-cli": "5.0.1"
+  }
+}
